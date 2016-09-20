@@ -237,7 +237,9 @@ class Grouplytics:
 
 
     def _output_report(self, count, per_member_count):
-        if count == 0: return
+        if count == 0: 
+            print()
+            return
         names = self._map_member_IDs_to_names(per_member_count)
         for name, user_ID in names.items():
             print('  - {}: {} ({:.2f}%)'.format(name, per_member_count[user_ID], (float(per_member_count[user_ID]) / count) * 100))
